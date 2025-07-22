@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fruits_store/core/helper_functions/on_genrate_routes.dart';
 import 'package:fruits_store/core/services/shared_preferences_singleton.dart';
+import 'package:fruits_store/core/utils/app_colors.dart';
 import 'package:fruits_store/features/splash/presentation/views/splash_view.dart';
 
 void main() async {
@@ -25,7 +26,11 @@ class FruitsStore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: 'Cairo'),
+      theme: ThemeData(
+        fontFamily: 'Cairo',
+        scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
+      ),
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
