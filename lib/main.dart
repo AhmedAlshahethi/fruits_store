@@ -1,7 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_store/core/helper_functions/on_genrate_routes.dart';
+import 'package:fruits_store/core/services/custom_bloc_observer.dart';
+import 'package:fruits_store/core/services/get_it_service.dart';
 import 'package:fruits_store/core/services/shared_preferences_singleton.dart';
 import 'package:fruits_store/core/utils/app_colors.dart';
 import 'package:fruits_store/features/splash/presentation/views/splash_view.dart';
@@ -12,6 +15,8 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await Prefs.getInstance();
   await EasyLocalization.ensureInitialized();
+  setupGetIT();
+  Bloc.observer = CustomBlocObserver();
   runApp(
     EasyLocalization(
       supportedLocales: [Locale('ar')],
