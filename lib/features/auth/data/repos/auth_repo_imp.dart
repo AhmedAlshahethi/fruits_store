@@ -31,7 +31,54 @@ class AuthRepoImp extends AuthRepo {
       log(
         "Excpetion in AuthRepoImp - createUserWithEmailAndPassword : ${e.toString()}",
       );
-      return left(ServerFailure(message: e.toString()));
+      return left(ServerFailure(message: 'حدث خطأ ما'));
+    }
+  }
+
+  @override
+  Future<Either<Failures, UserEntity>> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      var user = await firebaseAuthService.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return right(UserModel.fromFirebase(user));
+    } on CustomExceptions catch (e) {
+      return left(ServerFailure(message: e.message));
+    } catch (e) {
+      log(
+        "Excpetion in AuthRepoImp - signInWithEmailAndPassword : ${e.toString()}",
+      );
+      return left(ServerFailure(message: 'حدث خطأ ما'));
+    }
+  }
+
+  @override
+  Future<Either<Failures, UserEntity>> signinwithGoogle() async {
+    try {
+      var user = await firebaseAuthService.signInWithGoogle();
+      return right(UserModel.fromFirebase(user));
+    } on CustomExceptions catch (e) {
+      return left(ServerFailure(message: e.message));
+    } catch (e) {
+      log("Excpetion in AuthRepoImp - signInWithGoogle : ${e.toString()}");
+      return left(ServerFailure(message: 'حدث خطأ ما'));
+    }
+  }
+
+  @override
+  Future<Either<Failures, UserEntity>> signinWithFacebook() async {
+    try {
+      var user = await firebaseAuthService.signInWithFacebook();
+      return right(UserModel.fromFirebase(user));
+    } on CustomExceptions catch (e) {
+      return left(ServerFailure(message: e.message));
+    } catch (e) {
+      log("Excpetion in AuthRepoImp - signInWithFacebook : ${e.toString()}");
+      return left(ServerFailure(message: 'حدث خطأ ما'));
     }
   }
 }
