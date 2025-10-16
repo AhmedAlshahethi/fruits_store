@@ -10,9 +10,15 @@ class Assets {
 
   static const String imagesFacebook = "assets/images/facebook.svg";
 
+  static const String imagesFeaturedItemBackground = "assets/images/featuredItemBackground.svg";
+
+  static const String imagesFilter = "assets/images/filter.svg";
+
   static const String imagesGoogle = "assets/images/google.svg";
 
   static const String imagesLogo = "assets/images/logo.svg";
+
+  static const String imagesNotifications = "assets/images/notifications.svg";
 
   static const String imagesPageViewItem1Backgroundimage = "assets/images/page_view_item1_backgroundimage.svg";
 
@@ -24,6 +30,12 @@ class Assets {
 
   static const String imagesPlant = "assets/images/plant.svg";
 
+  static const String imagesProfileImage = "assets/images/profile_image.png";
+
+  static const String imagesSearch = "assets/images/search.svg";
+
   static const String imagesSplashBottom = "assets/images/splash_bottom.svg";
+
+  static const String imagesTest = "assets/images/test.png";
 }
 
