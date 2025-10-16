@@ -1,0 +1,23 @@
+import 'package:flutter/material.dart';
+import 'package:fruits_store/core/utils/text_styles.dart';
+
+class BestSellingHeader extends StatelessWidget {
+  const BestSellingHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          'الأكثر مبيعًا',
+          style: TextStyles.bold16.copyWith(color: Color(0xff0C0D0D)),
+        ),
+        Text(
+          'المزيد',
+          style: TextStyles.regular13.copyWith(color: Color(0xff949D9E)),
+        ),
+      ],
+    );
+  }
+}

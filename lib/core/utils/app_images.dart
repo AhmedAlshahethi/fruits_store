@@ -37,5 +37,7 @@ class Assets {
   static const String imagesSplashBottom = "assets/images/splash_bottom.svg";
 
   static const String imagesTest = "assets/images/test.png";
+
+  static const String imagesWatermelon = "assets/images/watermelon.png";
 }
 
