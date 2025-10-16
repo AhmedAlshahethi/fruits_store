@@ -1,12 +1,15 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fruits_store/constants.dart';
 import 'package:fruits_store/core/errors/exceptions.dart';
 
 import 'package:fruits_store/core/errors/failures.dart';
 import 'package:fruits_store/core/services/data_service.dart';
 import 'package:fruits_store/core/services/firebase_auth_service.dart';
+import 'package:fruits_store/core/services/shared_preferences_singleton.dart';
 import 'package:fruits_store/core/utils/bakend_endpoints.dart';
 import 'package:fruits_store/features/auth/data/models/user_model.dart';
 import 'package:fruits_store/features/auth/domain/entities/user_entity.dart';
@@ -59,6 +62,7 @@ class AuthRepoImp extends AuthRepo {
         password: password,
       );
       var userEntity = await getUserData(uId: user.uid);
+      await saveUserDataLocally(user: userEntity);
       return right(userEntity);
     } on CustomExceptions catch (e) {
       return left(ServerFailure(message: e.message));
@@ -124,9 +128,10 @@ class AuthRepoImp extends AuthRepo {
 
   @override
   Future addUserData({required UserEntity user}) async {
+    var userModel = UserModel.fromUserEntity(user);
     await dataService.addData(
       path: BakendEndpoints.addUserData,
-      data: user.tomap(),
+      data: userModel.tomap(),
       documentId: user.uId,
     );
   }
@@ -144,5 +149,11 @@ class AuthRepoImp extends AuthRepo {
     if (user != null) {
       await firebaseAuthService.deleteUser();
     }
+  }
+
+  @override
+  Future saveUserDataLocally({required UserEntity user}) async {
+    var userData = jsonEncode(UserModel.fromUserEntity(user).tomap());
+    await Prefs.setString(kUserData, userData);
   }
 }
