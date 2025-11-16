@@ -5,7 +5,7 @@ import 'package:fruits_store/core/services/firebase_auth_service.dart';
 import 'package:fruits_store/core/services/shared_preferences_singleton.dart';
 import 'package:fruits_store/core/utils/app_images.dart';
 import 'package:fruits_store/features/auth/presentation/views/signin/signin_view.dart';
-import 'package:fruits_store/features/home/presentation/views/home_view.dart';
+import 'package:fruits_store/features/home/presentation/views/main_view.dart';
 import 'package:fruits_store/features/on_boarding/presentation/views/on_boarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -45,7 +45,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         var isloggedIn = FirebaseAuthService().isLoggedIn();
         if (isloggedIn) {
           // ignore: use_build_context_synchronously
-          Navigator.of(context).pushReplacementNamed(HomeView.routeName);
+          Navigator.of(context).pushReplacementNamed(MainView.routeName);
         } else {
           // ignore: use_build_context_synchronously
           Navigator.of(context).pushReplacementNamed(SigninView.routeName);

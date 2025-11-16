@@ -22,6 +22,8 @@ class Assets {
 
   static const String imagesLogo = "assets/images/logo.svg";
 
+  static const String imagesNotification = "assets/images/notification.svg";
+
   static const String imagesNotifications = "assets/images/notifications.svg";
 
   static const String imagesPageViewItem1Backgroundimage = "assets/images/page_view_item1_backgroundimage.svg";
@@ -41,6 +43,8 @@ class Assets {
   static const String imagesProfileImage = "assets/images/profile_image.png";
 
   static const String imagesSearch = "assets/images/search.svg";
+
+  static const String imagesSetting = "assets/images/setting.svg";
 
   static const String imagesShoppingCartBold = "assets/images/shopping-cart-bold.svg";
 
