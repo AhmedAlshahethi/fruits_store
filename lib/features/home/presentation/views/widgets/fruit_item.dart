@@ -1,10 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:fruits_store/core/entities/product_entity.dart';
 import 'package:fruits_store/core/utils/app_colors.dart';
 import 'package:fruits_store/core/utils/text_styles.dart';
 import 'package:fruits_store/core/widgets/custom_network_image.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 class FruitItem extends StatelessWidget {
   const FruitItem({super.key, required this.product});

@@ -1,5 +1,4 @@
 import 'package:fruits_store/core/entities/product_entity.dart';
-import 'package:fruits_store/core/helper_functions/get_avg_rating.dart';
 import 'package:fruits_store/core/models/review_model.dart';
 
 class ProductModel {

@@ -7,7 +7,6 @@ import 'package:fruits_store/core/services/custom_bloc_observer.dart';
 import 'package:fruits_store/core/services/get_it_service.dart';
 import 'package:fruits_store/core/services/shared_preferences_singleton.dart';
 import 'package:fruits_store/core/utils/app_colors.dart';
-import 'package:fruits_store/features/home/presentation/views/widgets/products_view/product_view.dart';
 import 'package:fruits_store/features/splash/presentation/views/splash_view.dart';
 import 'package:fruits_store/firebase_options.dart';
 
@@ -45,7 +44,6 @@ class FruitsStore extends StatelessWidget {
       locale: context.locale,
       onGenerateRoute: onGenrateRoute,
       initialRoute: SplashView.routeName,
-      // initialRoute: ProductView.routeName,
     );
   }
 }

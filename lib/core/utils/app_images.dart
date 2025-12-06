@@ -54,6 +54,8 @@ class Assets {
 
   static const String imagesTest = "assets/images/test.png";
 
+  static const String imagesTrash = "assets/images/trash.svg";
+
   static const String imagesUserBold = "assets/images/user-bold.svg";
 
   static const String imagesUserOutline = "assets/images/user-outline.svg";

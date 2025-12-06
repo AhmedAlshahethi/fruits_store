@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_store/core/cubits/products_cubit/products_cubit.dart';
 import 'package:fruits_store/core/widgets/custom_app_bar.dart';
 import 'package:fruits_store/core/widgets/search_text_field.dart';
-import 'package:fruits_store/features/home/presentation/views/widgets/custom_home_app_bar.dart';
 import 'package:fruits_store/features/home/presentation/views/widgets/products_grid_view_builder.dart';
 import 'package:fruits_store/features/home/presentation/views/widgets/products_view/products_header.dart';
 
