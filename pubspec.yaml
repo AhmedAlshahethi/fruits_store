@@ -14,6 +14,7 @@ dependencies:
   dartz: ^0.10.1
   dots_indicator: ^4.0.1
   easy_localization: ^3.0.7+1
+  equatable: ^2.0.7
   firebase_auth: ^6.1.1
   firebase_core: ^4.1.1
   flutter:
